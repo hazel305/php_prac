@@ -1,0 +1,43 @@
+<?php 
+require_once ('config.php');
+
+$sql = "SELECT * FROM board";
+
+$result = mysqli_query($conn, $sql);
+
+$list = "";
+//row라는 배열에 들어있고  그 키값인 name
+while($row =mysqli_fetch_array($result, MYSQLI_ASSOC)){
+   $list = $list."<li><a href=\"view.php?number={$row['idx']}\">{$row['name']}</a></li>";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>메시지 게시판</h1>
+    <ul>
+        <?php echo $list; ?>
+    </ul>
+
+
+    <hr>
+    <h2>메시지 검색</h2>
+    <form action="search.php" method="get">
+        <p>검색할 키워드를 입력하세요.</p>
+        <p>
+            <label for="msgsearch">키워드: </label>
+            <input type="text" id="msgsearch" name="searchkey">
+        </p>
+        <input type="submit" value="검색">
+    </form>
+
+
+</body>
+</html>
