@@ -69,7 +69,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/bbs/inc/db.php');
                 ?>
                 <tr>
                     <td><?=$row['idx']; ?></td>
-                    <td><?=$title; ?></td>
+                    <td> <a href="page/read.php?idx=<?=$row['idx']; ?>"><?=$title; ?></a></td>
                     <td><?=$row['name']; ?></td>
                     <td><?=$row['date']; ?></td>
                     <td><?=$row['hit']; ?></td>
@@ -82,7 +82,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/bbs/inc/db.php');
             </tbody>
         </table>
         <div class="btns">
-            <a href="">글쓰기</a>
+        <a href="/bbs/page/write.php">글쓰기</a>
         </div>
     </div>
 </body>
