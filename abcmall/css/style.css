@@ -1,0 +1,29 @@
+#imageArea {
+  margin-top: 10px;
+}
+
+#imageArea img {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+label {
+  white-space: nowrap;
+}
+
+.product_list img {
+  width: 100px;
+}
+
+#optionBody [name^="optionCnt"] {
+  width: 60px;
+}
+
+.product_options img {
+  width: 80px;
+}
+
+.product_options {
+  margin-bottom: 10px;
+}
